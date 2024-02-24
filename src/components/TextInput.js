@@ -12,8 +12,8 @@ function TextInput({ onSave }) {
     // Handler to save text
     const handleSave = () => {
         onSave(text);
-        // Clearing text after saving
-        setText('');
+        // // Clearing text after saving
+        // setText('');
     };
 
     return (
@@ -23,7 +23,7 @@ function TextInput({ onSave }) {
                 value={text}
                 onChange={handleChange}
                 placeholder="Type here..."
-                style={{ width: '500px', height: '30px' ,  marginBottom: '5px'  }}
+                style={{ width: '500px', height: '30px'}}
             />
             {/* Button to save text */}
             <button onClick={handleSave}>Save</button>
