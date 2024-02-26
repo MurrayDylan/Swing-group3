@@ -1,4 +1,4 @@
-package idk.idk;
+package com.groupwork.dashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
