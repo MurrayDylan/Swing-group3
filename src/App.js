@@ -5,6 +5,8 @@ import LoginButton from './components/login';
 import Home from './components/Home';
 import Profile from './components/profile';
 import LogoutButton from './components/logout';
+import CreationPage from './components/AudienceCreation';
+
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -20,6 +22,7 @@ function App() {
         <Route path="/login" element={!isAuthenticated ? <LoginButton /> : <Navigate to="/" replace />} />
         <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" replace />} />
         <Route path="/logout" element={isAuthenticated ? <LogoutButton /> : <Navigate to="/login" replace />} />
+        <Route path="/AudienceCreation" element={isAuthenticated ? <CreationPage /> : <Navigate to="/login" replace />} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>
