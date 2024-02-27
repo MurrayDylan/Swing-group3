@@ -1,4 +1,4 @@
-package com.groupwork.dashboard;
+/*package com.groupwork.dashboard;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 
 @Entity
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -55,4 +54,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-}
+}*/

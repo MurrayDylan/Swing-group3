@@ -1,7 +1,9 @@
-package com.groupwork.dashboard;
+/*package com.groupwork.dashboard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping(path="/user")
@@ -12,13 +14,16 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping(path="/add")
-    public @ResponseBody String addUser(@RequestParam String first, @RequestParam String last, @RequestParam String email) {
+    public @ResponseBody String addUser(@RequestParam Map<String,String> requestParams)throws Exception {
         User user = new User();
-        user.setFirstName(first);
-        user.setLastName(last);
+        String firstName= requestParams.get("first");
+        user.setFirstName(firstName);
+        String lastName= requestParams.get("last");
+        user.setLastName(lastName);
+        String email= requestParams.get("email");
         user.setEmail(email);
         userRepository.save(user);
-        System.out.println(email);
+     //   System.out.println(email);
         return "Added new customer to repo!";
     }
 
@@ -31,4 +36,4 @@ public class UserController {
     public User findUserById(@PathVariable Integer id) {
         return userRepository.findUserById(id);
     }
-}
+}*/

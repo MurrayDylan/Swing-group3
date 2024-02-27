@@ -1,28 +1,36 @@
 package com.groupwork.dashboard;
+import java.util.Random;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "campaigns")
 public class Campaign{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
 private int budget;
 private int spend;
 private int kpi;
-private int baseBid;
-private int maxBid;
-private int CPM;
-    public Campaign(String name, int budget, int spend, int kpi, int baseBid, int maxBid, int CPM) {
-        this.name = name;
-        this.budget = budget;
-        this.spend = spend;
-        this.kpi = kpi;
-        this.baseBid = baseBid;
-        this.maxBid = maxBid;
-        this.CPM = CPM;
+private double baseBid;
+private double maxBid;
+private double CPM;
+    public Campaign() {
     }
-private String frequency;
+    public Campaign(String name) {
+        this.name = name;
+        this.budget = generateRandomValue(500, 1500);
+        this.spend = generateRandomValue(200, 800);
+        this.kpi = generateRandomValue(200, 400);
+        this.baseBid = generateRandomValueDouble(0.6, 0.6);
+        this.maxBid = generateRandomValueDouble(1.73, 1.73);
+        this.CPM = generateRandomValueDouble(8.0, 8.0);
+    }
+    public String getName(){
+        return this.name;
+    }
     public int getBudget(){
         return this.budget;
     }
@@ -33,7 +41,7 @@ private String frequency;
         return this.spend;
     }
     public void setSpend(int spendSet){
-        this.budget= spendSet;
+        this.spend= spendSet;
     }
 
     public int getKpi() {
@@ -43,27 +51,35 @@ private String frequency;
     public void setKpi(int kpi) {
         this.kpi = kpi;
     }
-    public int getBaseBid() {
+    public double getBaseBid() {
         return baseBid;
     }
 
-    public void setBaseBid(int baseBid) {
+    public void setBaseBid(double baseBid) {
         this.baseBid = baseBid;
     }
 
-    public int getMaxBid() {
+    public double getMaxBid() {
         return maxBid;
     }
 
-    public void setMaxBid(int maxBid) {
+    public void setMaxBid(double maxBid) {
         this.maxBid = maxBid;
     }
 
-    public int getCPM() {
+    public double getCPM() {
         return CPM;
     }
-    public void setCPM(int CPM) {
+    public void setCPM(double CPM) {
         this.CPM = CPM;
+    }
+    private int generateRandomValue(int lowerLimit, int upperLimit) {
+        Random rand = new Random();
+        return rand.nextInt(upperLimit - lowerLimit + 1) + lowerLimit;
+    }
+    private double generateRandomValueDouble(double lowerLimit, double upperLimit) {
+        Random rand = new Random();
+        return lowerLimit + (upperLimit - lowerLimit) * rand.nextDouble();
     }
 }
 
