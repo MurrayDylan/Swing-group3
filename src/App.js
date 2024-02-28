@@ -6,7 +6,8 @@ import LogoutButton from './components/logout';
 import Home from './components/Home';
 import Profile from './components/profile';
 import CreationPage from './components/AudienceCreation';
-import Navbar from './components/NavBar'; // Ensure this matches the actual file name exactly
+import Navbar from './components/NavBar';
+import logoImage from './assets/finch-logo.png'; // Make sure the path to your logo is correct
 import './App.css';
 
 function App() {
@@ -19,7 +20,10 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Navbar /> {/* Use Navbar here */}
+      {isAuthenticated && (
+        <img src={logoImage} alt="Logo" className="App-logo" />
+      )}
+        <Navbar />
         <Routes>
           <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" replace />} />
           <Route path="/login" element={!isAuthenticated ? <LoginButton /> : <Navigate to="/" replace />} />

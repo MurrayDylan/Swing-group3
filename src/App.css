@@ -1,15 +1,24 @@
-html, body, #root, .App{
+html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
-.App{
-  background-image: url('./assets/background3.jpeg');
+.App {
+  background-color: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative; /* Needed for absolute positioning of the logo */
+  overflow: hidden; /* Hide overflow */
+}
+
+.App-logo {
+  position: fixed; /* Logo will stay in place even on scroll */
+  top: 45px; /* Adjust the value to give some space from the top */
+  right: 10px; /* Adjust the value to give some space from the right */
+  height: 60px; /* Fixed height for the logo */
+  width: auto; /* To maintain aspect ratio */
 }

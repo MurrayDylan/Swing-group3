@@ -14,7 +14,7 @@
   
   /* Apply the animation to the profile container */
   .profile-container {
-    color: white; /* Set the text color to white */
+    color: black; /* Set the text color to white */
     background-color: transparent; /* Example background color */
     min-height: 100vh; /* Ensure it takes at least the full viewport height */
     display: flex;
@@ -36,7 +36,7 @@
     width: 150px; /* Set a fixed width */
     height: 150px; /* Set a fixed height */
     object-fit: cover; /* Ensure the image covers the area without stretching */
-    border: 3px solid white; /* Add a white border */
+    border: 3px solid black; /* Add a white border */
   }
   
   /* profile.css */
@@ -45,8 +45,8 @@
 .back-button {
     padding: 10px 20px; /* Increase padding for a larger button */
     font-size: 1rem; /* Set font size for the button */
-    color: white; /* Set text color to white */
-    background-color: #4CAF50; /* Example button background color */
+    color: black; /* Set text color to white */
+    background-color: rgb(173, 173, 173); /* Example button background color */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners for the button */
     cursor: pointer; /* Change cursor to indicate button */
@@ -54,7 +54,7 @@
   }
   
   .back-button:hover {
-    background-color: #255a28; /* Darken button background on hover */
+    background-color: gray; /* Darken button background on hover */
     transform: scale(1.05); /* Slightly increase button size on hover */
   }
   
