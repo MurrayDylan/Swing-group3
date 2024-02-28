@@ -1,0 +1,81 @@
+/* profile.css */
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to the profile container */
+  .profile-container {
+    color: white; /* Set the text color to white */
+    background-color: transparent; /* Example background color */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Adjusted for correct centering */
+    text-align: center; /* Center text */
+    gap: 1rem; /* Add space between items */
+    padding: 2rem; /* Add padding around the container */
+    animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
+  }
+  
+  /* Ensure other styles remain unchanged */
+  
+  
+  /* Style for the image to make it round and set a size */
+  .profile-image {
+    border-radius: 50%; /* Make the image round */
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+    border: 3px solid white; /* Add a white border */
+  }
+  
+  /* profile.css */
+
+/* Style for the back button */
+.back-button {
+    padding: 10px 20px; /* Increase padding for a larger button */
+    font-size: 1rem; /* Set font size for the button */
+    color: white; /* Set text color to white */
+    background-color: #4CAF50; /* Example button background color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Change cursor to indicate button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth background color and transform transitions */
+  }
+  
+  .back-button:hover {
+    background-color: #255a28; /* Darken button background on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+  }
+  
+  .back-button:active {
+    transform: scale(0.95); /* Slightly decrease button size when clicked */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .profile-container {
+      padding: 1rem; /* Reduce padding on smaller screens */
+    }
+    
+    .profile-image {
+      width: 100px; /* Smaller image on smaller screens */
+      height: 100px;
+    }
+    
+    .back-button {
+      padding: 8px 16px; /* Smaller button on smaller screens */
+    }
+  }
+  
+  
