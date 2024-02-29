@@ -13,6 +13,7 @@ html, body, #root {
   min-width: 100vw;
   position: relative; /* Needed for absolute positioning of the logo */
   overflow: hidden; /* Hide overflow */
+  font-family: 'AppleGothic', sans-serif; /* Adding AppleGothic font with sans-serif as fallback */
 }
 
 .App-logo {
