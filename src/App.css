@@ -1,0 +1,21 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative; /* Needed for absolute positioning of the logo */
+  overflow: hidden; /* Hide overflow */
+  font-family: 'AppleGothic', sans-serif; /* Adding AppleGothic font with sans-serif as fallback */
+}
+
+
+
+

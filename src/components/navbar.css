@@ -1,0 +1,44 @@
+/* navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-around; /* This will space your buttons evenly */
+    align-items: center;
+    padding: 1rem; /* Add padding to the top and bottom of the nav */
+    height: 10px; /* Set the height of the navbar */
+    background-color: black;  /* Example background color for the navbar */
+}
+
+.navbar button {
+    padding: 5px 20px; /* Increase padding to make buttons bigger */
+    font-size: 1.4rem; /* Increase font size */
+    margin: 0 15px; /* Increase margin to space buttons out more */
+    cursor: pointer; /* Change cursor to indicate button */
+    border: 1px solid transparent; /* Style for border */
+    background-color: transparent; /* Example button background color */
+    color: white; /* Button text color */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth background color and transform transitions */
+}
+
+.navbar button:hover {
+    background-color: transparent; /* Darken button background on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+    color: rgb(54, 133, 219);
+}
+
+.navbar button:active {
+    transform: scale(0.95); /* Slightly decrease button size when clicked */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        height: auto; /* Adjust height for mobile to fit content */
+    }
+
+    .navbar button {
+        margin: 10px 0; /* Adjust margin for vertical stacking */
+    }
+}

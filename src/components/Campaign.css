@@ -1,0 +1,57 @@
+:root {
+
+    --primary-color: #333;
+    --background-color: #fff;
+    --border-color: #e1e1e1;
+    --highlight-color: #007bff;
+  }
+  
+  body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+  }
+  
+  .sidebar {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 0;
+  }
+  
+  .header {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .campaign-table {
+    padding: 20px;
+  }
+  
+  .campaign-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .campaign-table th, .campaign-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  
+  
