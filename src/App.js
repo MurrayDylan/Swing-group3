@@ -6,8 +6,9 @@ import LogoutButton from './components/logout';
 import Home from './components/Home';
 import Profile from './components/profile';
 import CreationPage from './components/AudienceCreation';
+import Campaign from './components/Campaign';
 import Navbar from './components/NavBar';
-import logoImage from './assets/finch-logo.png'; // Make sure the path to your logo is correct
+import CampaignCreation from './components/CampaignCreation';
 import './App.css';
 
 function App() {
@@ -20,9 +21,6 @@ function App() {
   return (
     <Router>
       <div className='App'>
-      {isAuthenticated && (
-        <img src={logoImage} alt="Logo" className="App-logo" />
-      )}
         <Navbar />
         <Routes>
           <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" replace />} />
@@ -30,6 +28,8 @@ function App() {
           <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" replace />} />
           <Route path="/logout" element={isAuthenticated ? <LogoutButton /> : <Navigate to="/login" replace />} />
           <Route path="/AudienceCreation" element={isAuthenticated ? <CreationPage /> : <Navigate to="/login" replace />} />
+          <Route path="/Campaign" element={isAuthenticated ? <Campaign /> : <Navigate to="/login" replace />} />
+          <Route path="/campaign-creation" element={isAuthenticated ? <CampaignCreation /> : <Navigate to="/login" replace />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>

@@ -1,0 +1,91 @@
+/* CampaignsTable.css */
+
+.campaigns-table {
+    font-family: 'Arial', sans-serif;
+    max-width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: none; /* 扁平化设计不使用阴影 */
+  }
+  
+  .campaigns-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .campaigns-table th,
+  .campaigns-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border: 1px solid #dddddd; 
+  }
+  
+  /* 表头样式 */
+  .campaigns-table thead th {
+    background-color: #f2f2f2;
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  /* 鼠标悬停行的样式 */
+  .campaigns-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* 行的斑马条纹样式 */
+  .campaigns-table tbody tr:nth-child(odd) {
+    background-color: #fcfcfc;
+  }
+  
+  /* 状态图标的样式 */
+  .status-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* 圆形图标 */
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  /* 状态图标的颜色样式 */
+  .status-icon.active {
+    background-color: #4CAF50; /* 绿色表示活跃状态 */
+  }
+  
+  .status-icon.inactive {
+    background-color: #f44336; /* 红色表示非活跃状态 */
+  }
+  
+  /* 确保表格在小屏幕上也能很好地显示 */
+  @media screen and (max-width: 600px) {
+    .campaigns-table thead {
+      display: none; /* 在小屏幕上隐藏表头 */
+    }
+  
+    .campaigns-table tbody,
+    .campaigns-table tr,
+    .campaigns-table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .campaigns-table tr {
+      margin-bottom: 15px;
+    }
+  
+    .campaigns-table td {
+      text-align: right;
+      padding-left: 50%; /* 确保文本不会覆盖上它的标签 */
+      position: relative;
+    }
+  
+    .campaigns-table td::before {
+      content: attr(data-label); /* 使用属性选择器添加内容 */
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  

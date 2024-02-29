@@ -6,7 +6,13 @@
     height: 100vh;
     text-align: center;
   }
-  
+  .App-logo {
+    position: fixed; /* Logo will stay in place even on scroll */
+    top: 45px; /* Adjust the value to give some space from the top */
+    right: 10px; /* Adjust the value to give some space from the right */
+    height: 60px; /* Fixed height for the logo */
+    width: auto; /* To maintain aspect ratio */
+  }
   @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);

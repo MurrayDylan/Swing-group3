@@ -14,6 +14,7 @@ const Navbar = () => {
         <button onClick={() => navigate('/')}>Home</button>
         <button onClick={() => navigate('/profile')}>Profile</button>
         <button onClick={() => navigate('/AudienceCreation')}>Create Your Audience</button>
+        <button onClick={() => navigate('/Campaign')}>Campaign</button>
         <button onClick={() => logout({ returnTo: window.location.origin })}>Logout</button>
         {/* Adjust the logout functionality based on your Auth0 setup */}
       </nav>
