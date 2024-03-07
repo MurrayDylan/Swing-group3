@@ -5,6 +5,7 @@ import LoginButton from './components/login';
 import LogoutButton from './components/logout';
 import Home from './components/Home';
 import Profile from './components/profile';
+import EditProfile from'./components/EditProfile';
 import CreationPage from './components/AudienceCreation';
 import Campaign from './components/Campaign';
 import Navbar from './components/NavBar';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/AudienceCreation" element={isAuthenticated ? <CreationPage /> : <Navigate to="/login" replace />} />
           <Route path="/Campaign" element={isAuthenticated ? <Campaign /> : <Navigate to="/login" replace />} />
           <Route path="/campaign-creation" element={isAuthenticated ? <CampaignCreation /> : <Navigate to="/login" replace />} />
+          <Route path="/edit-profile" element={isAuthenticated ? <EditProfile /> : <Navigate to="/login" replace />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>
