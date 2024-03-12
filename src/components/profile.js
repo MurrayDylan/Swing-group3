@@ -2,13 +2,15 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from 'react-router-dom';
 import './profile.css';
+import { useProfile } from "./ProfileContext"; 
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const navigate = useNavigate();
+  const { profile } = useProfile(); 
 
   const goToEditProfile = () => {
-    navigate('/edit-profile'); // 导航至 EditProfile 组件
+    navigate('/edit-profile'); 
   };
 
   if (isLoading) {
@@ -22,11 +24,12 @@ const Profile = () => {
           <img src={user.picture} alt={user.name} className="profile-avatar" />
         </div>
         <div className="profile-info">
-          <h2>{user.name}</h2>
+          <h2>{profile.name || user.name}</h2>
           <p>Email: {user.email}</p>
-          <p>Age: {user.age}</p>
-          <p>Career: {user.career}</p>
-          <p>Gender: {user.gender}</p>
+          <p>Age: {profile.dateOfBirth}</p> 
+          <p>Career: {profile.career}</p>
+          <p>Gender: {profile.gender}</p>
+          <p>Address: {profile.address}</p> 
         </div>
         <button onClick={goToEditProfile} className="edit-button">
           Edit Profile
