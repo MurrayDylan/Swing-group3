@@ -25,6 +25,7 @@
     gap: 1rem; /* Add space between items */
     padding: 2rem; /* Add padding around the container */
     animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
+    position: relative;
   }
   
   /* Ensure other styles remain unchanged */
