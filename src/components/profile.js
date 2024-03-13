@@ -26,7 +26,7 @@ const Profile = () => {
         <div className="profile-info">
           <h2>{profile.name || user.name}</h2>
           <p>Email: {user.email}</p>
-          <p>Age: {profile.dateOfBirth}</p> 
+          <p>Date Of Birth: {profile.dateOfBirth}</p> 
           <p>Career: {profile.career}</p>
           <p>Gender: {profile.gender}</p>
           <p>Address: {profile.address}</p> 

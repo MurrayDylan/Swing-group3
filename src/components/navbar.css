@@ -2,23 +2,28 @@
 
 .navbar {
     display: flex;
-    justify-content: space-around; /* This will space your buttons evenly */
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem; /* Add padding to the top and bottom of the nav */
-    height: 10px; /* Set the height of the navbar */
-    background-color: black;  /* Example background color for the navbar */
-}
+    background-color: #000;
+    color: #000000;
+    padding:0.3rem 1rem; /* Reduce the vertical padding */
+  }
 
-.navbar button {
-    padding: 5px 20px; /* Increase padding to make buttons bigger */
-    font-size: 1.4rem; /* Increase font size */
-    margin: 0 15px; /* Increase margin to space buttons out more */
-    cursor: pointer; /* Change cursor to indicate button */
-    border: 1px solid transparent; /* Style for border */
-    background-color: transparent; /* Example button background color */
-    color: white; /* Button text color */
-    border-radius: 5px; /* Rounded corners for buttons */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth background color and transform transitions */
+  .navbar-logo {
+    height: 50px; /* Or your preferred size */
+    cursor: pointer;
+  }
+
+  .navbar button {
+    padding: 2px 20px; /* Reduce the vertical padding to make buttons narrower */
+    font-size: 1.4rem; /* Existing style */
+    margin: 0 15px; /* Existing style */
+    cursor: pointer; /* Existing style */
+    border: 1px solid transparent; /* Existing style */
+    background-color: transparent; /* Existing style */
+    color: white; /* Existing style */
+    border-radius: 5px; /* Existing style */
+    transition: background-color 0.3s, transform 0.3s; /* Existing style */
 }
 
 .navbar button:hover {
@@ -42,3 +47,17 @@
         margin: 10px 0; /* Adjust margin for vertical stacking */
     }
 }
+
+.navbar-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+  }
+
+.navbar-links button:hover {
+    text-decoration: underline;
+  }

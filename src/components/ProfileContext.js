@@ -7,7 +7,7 @@ export const useProfile = () => useContext(ProfileContext);
 export const ProfileProvider = ({ children }) => {
   const [profile, setProfile] = useState({
     name: "",
-    age: "",
+    dateofbirth: "",
     career: "",
     gender: "",
     address:"",
