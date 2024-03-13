@@ -1,3 +1,4 @@
+/*latest profile*/
 import React from "react";
 import './EditProfile.css';
 import { useNavigate } from 'react-router-dom';
