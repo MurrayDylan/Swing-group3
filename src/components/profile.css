@@ -33,15 +33,33 @@
   /* Style for the image to make it round and set a size */
   .profile-image {
     border-radius: 50%; /* Make the image round */
-    width: 150px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
     object-fit: cover; /* Ensure the image covers the area without stretching */
     border: 3px solid black; /* Add a white border */
+    position: absolute; /* Position the image absolutely within its parent container */
+    top: 6rem; /* Distance from the top of the container */
+    right: 1rem; /* Distance from the right of the container */
+    width: 40px; /* Shrink the image width */
+   height: 40px; /* Shrink the image height */
   }
-  
-  /* profile.css */
 
-/* Style for the back button */
+/* Add styles for additional information */
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align information to the left */
+  margin-left: 2rem; /* Spacing from the left side */
+}
+
+/* Style for the edit button */
+.edit-button {
+  position: absolute;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  bottom:1rem;
+  right:1rem;
+}
+
 .back-button {
     padding: 10px 20px; /* Increase padding for a larger button */
     font-size: 1rem; /* Set font size for the button */
@@ -62,20 +80,30 @@
     transform: scale(0.95); /* Slightly decrease button size when clicked */
   }
   
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
-    .profile-container {
-      padding: 1rem; /* Reduce padding on smaller screens */
-    }
-    
-    .profile-image {
-      width: 100px; /* Smaller image on smaller screens */
-      height: 100px;
-    }
-    
-    .back-button {
-      padding: 8px 16px; /* Smaller button on smaller screens */
-    }
+  /* Additional styles for the edit profile page and button */
+.profile-avatar-wrapper {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.profile-info {
+  /* Styles for the container of profile info */
+  margin-top: 90px; /* Adjust top margin to give space for the avatar */
+}
+
+@media (max-width: 768px) {
+  .profile-avatar {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 50px;
+    height: 50px;
   }
+
+  .edit-button {
+    top: 1rem;
+    right: 0.5rem;
+  }
+}
   
   

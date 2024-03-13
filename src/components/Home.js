@@ -1,10 +1,17 @@
 import React from 'react';
 import './Home.css'; // Import the CSS file
 import logoImage from '../assets/finch-logo.png'; // Make sure the path to your logo is correct
+import videoBackground from '../assets/LiveBackground2.mp4'; // Import the video file
 
 function Home() {
   return (
     <div className="white-text"> {/* Apply the white-text class */}
+      <div className="video-background">
+        <video autoplay="autoplay" loop="loop" muted="muted" playsInline>
+          <source src={videoBackground} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className='home'>
         <div className="logo-container">
           <img src={logoImage} alt="Finch Mini Trade Desk Logo" className="App-logo" />

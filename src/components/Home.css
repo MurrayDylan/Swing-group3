@@ -1,65 +1,72 @@
 .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.App-logo {
+  position: fixed;
+  top: 45px;
+  right: 10px;
+  height: 60px;
+  width: auto;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  .App-logo {
-    position: fixed; /* Logo will stay in place even on scroll */
-    top: 45px; /* Adjust the value to give some space from the top */
-    right: 10px; /* Adjust the value to give some space from the right */
-    height: 60px; /* Fixed height for the logo */
-    width: auto; /* To maintain aspect ratio */
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
+}
+
+.welcome-container h1 {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 3rem;
+  animation: slideInFromLeft 2s ease-out;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .welcome-container h1 {
-    margin: 0;
-    padding: 0;
-    color: black;
-    font-size: 3rem; /* Adjust the size as needed */
-    /* Additional styling specifically for the welcome text */
-    animation: slideInFromLeft 2s ease-out; /* Apply the slide-in animation */
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
-    
-  
-  
-  @keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  .description-container {
-    margin-top: 20px; /* Space between welcome text and description */
-    max-width: 80%;
-    animation: slideInFromRight 2s ease-out; /* Apply the slide-in animation for description */
-    border: 2px solid black; /* Add a border to the description container */
-    padding: 20px; /* Add some padding inside the border */
-    /* Center the container if needed */
-  }
-  
-  .description {
-    color: black;
-    font-size: 2rem;
-    line-height: 1.6;
-    /* Ensure the description text is styled independently */
-  }
-  
-  
+}
+
+.description-container {
+  margin-top: 20px;
+  max-width: 80%;
+  animation: slideInFromRight 2s ease-out;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.description {
+  color: black;
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  overflow: hidden;
+}
