@@ -33,7 +33,7 @@ const ProfileEdit = () => {
       />
 
       {/*DropDown*/}
-      <select name="Gender" value={profile.gender} onChange={handleChange}>
+      <select name="gender" value={profile.gender} onChange={handleChange}>
       <option value="">Select Gender</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
@@ -41,9 +41,10 @@ const ProfileEdit = () => {
       <option value="Tesco Shopping Bag">Tesco Shopping Bag</option>
       <option value="Rrefer Not To Say">Prefer Not To Say</option>
       </select>
+
       <input
-        type="Date"
-        name="Date Of Birth"
+        type="date"
+        name="dateOfbirth"
         value={profile.dateOfBirth}
         onChange={handleChange}
       />
