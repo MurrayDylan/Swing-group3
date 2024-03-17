@@ -1,3 +1,4 @@
+//Sample Campaign Page
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Campaign.css';
