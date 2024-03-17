@@ -11,6 +11,7 @@ import Campaign from './components/Campaign';
 import Navbar from './components/NavBar';
 import CampaignCreation from './components/CampaignCreation';
 import { ProfileProvider } from './components/ProfileContext'; 
+import { CampaignProvider } from './components/CampaignContext';
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
 
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <CampaignProvider>
       <ProfileProvider> 
         <div className='App'>
           <Navbar />
@@ -36,6 +38,7 @@ function App() {
           </Routes>
         </div>
       </ProfileProvider>
+      </CampaignProvider>
     </Router>
   );
 }

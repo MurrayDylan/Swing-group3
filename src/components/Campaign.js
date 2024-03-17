@@ -1,6 +1,7 @@
 //Sample Campaign Page
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CampaignContext } from './CampaignContext';
 import './Campaign.css';
 
 const SideBarItem = ({ title, onClick }) => (
@@ -68,10 +69,7 @@ function Campaign() {
   const [filter2, setFilter2] = useState('');
   const [filter3, setFilter3] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
-  
-  const campaigns = [
-    // ... your campaign data
-  ];
+  const { campaigns } = useContext(CampaignContext);
 
   const handleSelectSidebarItem = (itemName) => {
     console.log(`${itemName} selected`);
@@ -82,6 +80,8 @@ function Campaign() {
     // Implement filtering logic here
     return true;
   });
+   
+  
 
   return (
     <div className="dashboard">

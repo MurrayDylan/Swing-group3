@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { CampaignContext } from './CampaignContext';
 import { useNavigate } from 'react-router-dom';
-import TextInput from './TextInput';
-import FinishButton from './FinishButton';
 import './CreationPage.css';
-import NumberInput from './NumberInput';
 
 const CampaignCreation = () => {
     const navigate = useNavigate();
+    const { addCampaign } = useContext(CampaignContext);
+    const [newCampaign, setNewCampaign] = useState({
+    name: '',
+    budget: '',
+    spend: '',
+    primaryKPI: '',
+    baseBid: '',
+    maxBid: '',
+    cpm: '',
+    frequency: ''
+  });
+
+  const handleSave = () => {
+    addCampaign(newCampaign);
+    console.log('Campaign saved:', newCampaign);
+    navigate('/campaign');
+  };
+
 
     // Function to go back to the previous page
     const handleBack = () => {
@@ -29,43 +45,73 @@ const CampaignCreation = () => {
             <div style={{ overflowY: 'auto', flex: 1 }}>
                 <div className="white-text" style={{ padding: '0 20px' }}>
                     {/* Campaign Name input */}
-                    <p>1. Campaign Name</p>
-                    <TextInput onSave={handleSave} />
+                    <p>Campaign Name</p>
+                    <input 
+                    value={newCampaign.name} 
+                    onChange={e => setNewCampaign({ ...newCampaign, name: e.target.value })} 
+                    />
 
-                    {/* Budget input */}
-                    <p>2. Budget</p>
-                    <NumberInput onSave={handleSave} />
+                    {/*Budget Input*/}
+                    <p>Budget</p>
+                    <input 
+                    type="number"
+                    value={newCampaign.budget} 
+                    onChange={e => setNewCampaign({ ...newCampaign, budget: e.target.value })} 
+                    />
 
                     {/* Spend input */}
                     <p>3. Spend</p>
-                    <NumberInput onSave={handleSave} />
+                    <input
+                    type="number"
+                    value={newCampaign.spend} 
+                    onChange={e => setNewCampaign({ ...newCampaign, spend: e.target.value })} 
+                    />
 
                     {/* Primary KPI input */}
                     <p>4. Primary KPI (%)</p>
-                    <NumberInput onSave={handleSave} />
-
+                    <input
+                    type="number"
+                    value={newCampaign.kpi} 
+                    onChange={e => setNewCampaign({ ...newCampaign, kpi: e.target.value })} 
+                    />
+                    
                     {/* Base Bid input */}
                     <p>5. Base Bid ($)</p>
-                    <NumberInput onSave={handleSave} />
+                    <input
+                    type="number"
+                    value={newCampaign.basebid} 
+                    onChange={e => setNewCampaign({ ...newCampaign, basebid: e.target.value })} 
+                    />
 
                     {/* Max Bid input */}
                     <p>6. Max Bid ($)</p>
-                    <NumberInput onSave={handleSave} />
+                    <input
+                    type="number"
+                    value={newCampaign.maxbid} 
+                    onChange={e => setNewCampaign({ ...newCampaign, maxbid: e.target.value })} 
+                    />
 
                     {/* CPM input */}
                     <p>7. CPM ($)</p>
-                    <NumberInput onSave={handleSave} />
+                    <input
+                    type="number"
+                    value={newCampaign.cpmbid} 
+                    onChange={e => setNewCampaign({ ...newCampaign, cpmbid: e.target.value })} 
+                    />
 
                     {/* Frequency input */}
                     <p>8. Frequency (If unknown put N/A)</p>
-                    <TextInput onSave={handleSave} />
+                    <input 
+                    value={newCampaign.frequency} 
+                    onChange={e => setNewCampaign({ ...newCampaign, frequency: e.target.value })} 
+                    />
                 </div>
             </div>
 
             {/* Fixed footer section */}
-            <div style={{ padding: '20px' }}>
-                <FinishButton />
-            </div>
+            <button onClick={handleSave} style={{ padding: '10px 20px', margin: '20px 0' }}>
+            Save Campaign
+            </button>
         </div>
     );
 }
@@ -73,6 +119,6 @@ const CampaignCreation = () => {
 export default CampaignCreation;
 
 // Missing onSave function
-const handleSave = (checkedItems) => {
+/*const handleSave = (checkedItems) => {
     console.log('Checked items:', checkedItems);
-};
+};*/
