@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './components/login';
 import LogoutButton from './components/logout';
 import Home from './components/Home';
-import Profile from './components/profile';
+import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
 import CreationPage from './components/AudienceCreation';
 import Campaign from './components/Campaign';
