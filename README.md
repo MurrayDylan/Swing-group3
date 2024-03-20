@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Swing-group3
+# SWENG-group3
 =======
 # Getting Started with Create React App
 
