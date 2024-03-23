@@ -1,6 +1,9 @@
 package com.example.demo.models;
 import jakarta.persistence.*;
 
+import java.util.List;
+import java.util.Set;
+
 
 @Entity
 @Table(name="users")
@@ -18,6 +21,8 @@ public class User {
     private String address;
 
     private String companyName;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Campaign> campaigns;
 
     public User(String username, String password, String name, String email, String phoneNumber, String address, String companyName) {
         this.username = username;
@@ -71,6 +76,7 @@ public class User {
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
+
 
 
 
