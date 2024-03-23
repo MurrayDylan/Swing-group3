@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Optional;
+import java.util.Set;
 
 
 @RestController
@@ -35,7 +36,7 @@ public class UserController {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("User not found with id: " + id));
         Campaign newCampaign = new Campaign(user,name, budget,spend, kpi, baseBid, maxBid, CPM);
-        user.getCampaigns().add(newCampaign);
+        campaignRepository.save(newCampaign);
         return "campaign successfully created with name: "+ name;
     }
     // Endpoint to create a new user
@@ -55,10 +56,19 @@ public class UserController {
 
         return "user successfully created with name: "+ name;
     }
-    @GetMapping("/find/{id}")
-    public Optional<Campaign> findCampaignById(@PathVariable Integer id) {
-        return campaignRepository.findById(id);
+    @GetMapping("/user/campaigns/{id}")
+    public ResponseEntity<Set<Campaign>> getCampaignsByUser(@PathVariable Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("User not found with id: " + id));
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        Set<Campaign> campaigns = campaignRepository.findByUser(user);
+        return new ResponseEntity<>(campaigns, HttpStatus.OK);
     }
-
+    @GetMapping("/users/list")
+    public Iterable<User> getUsers() {
+        return userRepository.findAll();
+    }
 }
 

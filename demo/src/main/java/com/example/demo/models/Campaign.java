@@ -5,8 +5,8 @@ import java.util.Random;
 
 import jakarta.persistence.*;
 
-//@Entity
-//@Table(name = "campaigns")
+@Entity
+@Table(name = "campaigns")
 public class Campaign{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
