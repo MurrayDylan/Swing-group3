@@ -21,6 +21,7 @@ public class Campaign{
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
     public Campaign() {
     }
     public Campaign(User user, String name, double budget, double spend, double kpi, double baseBid, double maxBid, double CPM) {
