@@ -1,5 +1,5 @@
 package com.example.demo.Repository;
-import com.example.demo.models.Campaign;
+import com.example.demo.models.Campaign.Campaign;
 import com.example.demo.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

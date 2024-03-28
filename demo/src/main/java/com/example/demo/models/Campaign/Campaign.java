@@ -1,32 +1,30 @@
-package com.example.demo.models;
-import jakarta.persistence.*;
-import java.util.Random;
-
-
+package com.example.demo.models.Campaign;
+import com.example.demo.models.Campaign.Metrics.GoalInfo.Metrics;
+import com.example.demo.models.User;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "campaigns")
 public class Campaign{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
+    private String campaignId;
     private double budget;
     private double spend;
     private double kpi;
     private double baseBid;
     private double maxBid;
     private double CPM;
+    @OneToOne(mappedBy = "campaign", cascade = CascadeType.ALL)
+    private Metrics metrics;
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public Campaign() {
     }
-    public Campaign(User user, String name, double budget, double spend, double kpi, double baseBid, double maxBid, double CPM) {
+    public Campaign(User user, String campaignId, double budget, double spend, double kpi, double baseBid, double maxBid, double CPM) {
         this.user = user;
-        this.name = name;
+        this.campaignId = campaignId;
         this.budget =budget;
         this.spend = spend;
         this.kpi = kpi;
@@ -34,8 +32,8 @@ public class Campaign{
         this.maxBid = maxBid;
         this.CPM = CPM;
     }
-    public String getName(){
-        return this.name;
+    public String getcampaignId(){
+        return this.campaignId;
     }
     public double getBudget(){
         return this.budget;
@@ -79,8 +77,8 @@ public class Campaign{
     public void setCPM(double CPM) {
         this.CPM = CPM;
     }
-    public void setUser(Long id){
-        this.id= id;
-    }
+    //public void setUser(Long id){
+        //this.id= id;
+   // }
 }
 

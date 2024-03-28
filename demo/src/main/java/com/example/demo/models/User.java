@@ -1,7 +1,7 @@
 package com.example.demo.models;
+import com.example.demo.models.Campaign.Campaign;
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Set;
 
 
