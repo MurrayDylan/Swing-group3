@@ -3,10 +3,10 @@ name: Build
 on:
   push:
     branches:
-      - swing-back
+      - sweng-back
   pull_request:
     branches:
-      - swing-back
+      - sweng-back
 
 jobs:
   build:
