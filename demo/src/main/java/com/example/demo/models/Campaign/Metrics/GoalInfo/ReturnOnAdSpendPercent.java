@@ -1,30 +1,33 @@
 package com.example.demo.models.Campaign.Metrics.GoalInfo;
 
+import jakarta.persistence.Embeddable;
+
+import java.util.Random;
+@Embeddable
 public class ReturnOnAdSpendPercent {
-    private Double amount;
-    private Double target;
+    private Double adSpendAmount;
+    private Double adSpendTarget;
 
-    // Constructor
-    public ReturnOnAdSpendPercent(Double amount, Double target) {
-        this.amount = amount;
-        this.target = target;
+    public ReturnOnAdSpendPercent() {
+        Random random = new Random();
+        this.adSpendAmount = random.nextDouble() * 1000;
+        this.adSpendTarget = random.nextDouble() * 1000;
     }
-
     // Getters and Setters
     public Double getAmount() {
-        return amount;
+        return adSpendAmount;
     }
 
     public void setAmount(Double amount) {
-        this.amount = amount;
+        this.adSpendAmount = amount;
     }
 
     public Double getTarget() {
-        return target;
+        return adSpendTarget;
     }
 
     public void setTarget(Double target) {
-        this.target = target;
+        this.adSpendTarget = target;
     }
 
 }

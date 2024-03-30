@@ -14,14 +14,15 @@ public class Campaign{
     private double baseBid;
     private double maxBid;
     private double CPM;
-    @OneToOne(mappedBy = "campaign", cascade = CascadeType.ALL)
+    //@OneToOne(mappedBy = "campaign", cascade = CascadeType.ALL)
     private Metrics metrics;
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    public Campaign(){
 
-    public Campaign() {
     }
+
     public Campaign(User user, String campaignId, double budget, double spend, double kpi, double baseBid, double maxBid, double CPM) {
         this.user = user;
         this.campaignId = campaignId;
@@ -31,6 +32,7 @@ public class Campaign{
         this.baseBid = baseBid;
         this.maxBid = maxBid;
         this.CPM = CPM;
+        this.metrics= new Metrics();
     }
     public String getcampaignId(){
         return this.campaignId;
@@ -74,11 +76,12 @@ public class Campaign{
     public double getCPM() {
         return CPM;
     }
+
+    public Metrics getMetrics(){
+        return metrics;
+    }
     public void setCPM(double CPM) {
         this.CPM = CPM;
     }
-    //public void setUser(Long id){
-        //this.id= id;
-   // }
 }
 

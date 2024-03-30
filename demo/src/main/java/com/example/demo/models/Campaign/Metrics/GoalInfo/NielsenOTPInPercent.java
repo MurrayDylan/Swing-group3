@@ -1,38 +1,42 @@
 package com.example.demo.models.Campaign.Metrics.GoalInfo;
+
+import jakarta.persistence.Embeddable;
+
+import java.util.Random;
+@Embeddable
 public class NielsenOTPInPercent {
-    private Integer value;
-    private Double amount;
-    private Double target;
+    private Integer nielsenValue;
+    private Double nielsenAmount;
+    private Double nielsenTarget;
 
     // Constructor
-    public NielsenOTPInPercent(Integer value, Double amount, Double target) {
-        this.value = value;
-        this.amount = amount;
-        this.target = target;
+    public NielsenOTPInPercent() {
+        Random random = new Random();
+        this.nielsenValue = random.nextInt(101);
+        this.nielsenAmount = random.nextDouble() * 1000;
+        this.nielsenTarget = random.nextDouble() * 1000;
     }
-
-    // Getters and Setters
     public Integer getValue() {
-        return value;
+        return nielsenValue;
     }
 
     public void setValue(Integer value) {
-        this.value = value;
+        this.nielsenValue = value;
     }
 
     public Double getAmount() {
-        return amount;
+        return nielsenAmount;
     }
 
     public void setAmount(Double amount) {
-        this.amount = amount;
+        this.nielsenAmount = amount;
     }
 
     public Double getTarget() {
-        return target;
+        return nielsenTarget;
     }
 
     public void setTarget(Double target) {
-        this.target = target;
+        this.nielsenTarget = target;
     }
 }

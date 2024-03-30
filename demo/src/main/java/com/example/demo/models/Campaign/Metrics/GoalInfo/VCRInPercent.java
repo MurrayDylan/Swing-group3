@@ -1,40 +1,44 @@
 package com.example.demo.models.Campaign.Metrics.GoalInfo;
 
-public class VCRInPercent {
-    private Double value;
-    private Double amount;
-    private Double target;
+import jakarta.persistence.Embeddable;
 
-    // Constructor
-    public VCRInPercent(Double value, Double amount, Double target) {
-        this.value = value;
-        this.amount = amount;
-        this.target = target;
+import java.util.Random;
+@Embeddable
+public class VCRInPercent {
+    private Double vcrValue;
+    private Double vcrAmount;
+    private Double vcrTarget;
+
+    public VCRInPercent() {
+        Random random = new Random();
+        this.vcrValue = random.nextDouble() * 100;
+        this.vcrAmount = random.nextDouble() * 1000;
+        this.vcrTarget = random.nextDouble() * 1000;
     }
 
-    // Getters and Setters
+
     public Double getValue() {
-        return value;
+        return vcrValue;
     }
 
     public void setValue(Double value) {
-        this.value = value;
+        this.vcrValue = value;
     }
 
     public Double getAmount() {
-        return amount;
+        return vcrAmount;
     }
 
     public void setAmount(Double amount) {
-        this.amount = amount;
+        this.vcrAmount = amount;
     }
 
     public Double getTarget() {
-        return target;
+        return vcrTarget;
     }
 
     public void setTarget(Double target) {
-        this.target = target;
+        this.vcrTarget = target;
     }
 
 }

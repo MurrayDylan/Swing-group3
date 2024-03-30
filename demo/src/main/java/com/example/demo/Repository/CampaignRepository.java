@@ -10,4 +10,5 @@ import java.util.Set;
 public interface CampaignRepository extends JpaRepository<Campaign, Long> {
     Set<Campaign> findByUser(User user);
     // You can add custom queries here if needed
+    Campaign findByCampaignId(String campaignId);
 }

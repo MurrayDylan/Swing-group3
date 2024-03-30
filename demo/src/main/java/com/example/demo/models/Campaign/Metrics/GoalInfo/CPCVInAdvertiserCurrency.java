@@ -1,39 +1,43 @@
 package com.example.demo.models.Campaign.Metrics.GoalInfo;
 
+import jakarta.persistence.Embeddable;
+
+import java.util.Random;
+@Embeddable
 public class CPCVInAdvertiserCurrency {
-    private Double amount;
-    private Double target;
-    private String currencyCode;
+    private Double cpcvAmount;
+    private Double cpcvTarget;
+    private String cpcvCurrencyCode;
 
     // Constructor
-    public CPCVInAdvertiserCurrency(Double amount, Double target, String currencyCode) {
-        this.amount = amount;
-        this.target = target;
-        this.currencyCode = currencyCode;
+    public CPCVInAdvertiserCurrency() {
+        Random random = new Random();
+        this.cpcvAmount = random.nextDouble() * 1000; // Random value between 0 and 1000
+        this.cpcvTarget = random.nextDouble() * 1000; // Random value between 0 and 1000
+        this.cpcvCurrencyCode = "USD"; // Default currency code, adjust as needed
     }
-
     // Getters and Setters
     public Double getAmount() {
-        return amount;
+        return cpcvAmount;
     }
 
     public void setAmount(Double amount) {
-        this.amount = amount;
+        this.cpcvAmount = amount;
     }
 
     public Double getTarget() {
-        return target;
+        return cpcvTarget;
     }
 
     public void setTarget(Double target) {
-        this.target = target;
+        this.cpcvTarget = target;
     }
 
     public String getCurrencyCode() {
-        return currencyCode;
+        return cpcvCurrencyCode;
     }
 
     public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+        this.cpcvCurrencyCode = currencyCode;
     }
 }
