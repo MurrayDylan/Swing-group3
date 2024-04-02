@@ -54,7 +54,6 @@ body, html {
   transition: background-color 0.3s ease-in-out;
   font-size: var(--sidebar-font-size); 
 }
-
 .sidebar-item:hover, .sidebar-item:focus, .sidebar ul li:hover, .sidebar ul li:focus {
   background-color: #555;
   color: white;
