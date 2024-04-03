@@ -1,0 +1,32 @@
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.white-text {
+    color: black;
+    animation: slideInFromLeft 1s ease-out;
+    /* Apply the slide-in animation */
+    padding: 20px;
+    /* Add some padding around the content */
+    background-color: transparent;
+    /* Dark background for contrast */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin: 20px auto;
+    /* Center the content */
+    width: 80%;
+    /* Set a max width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+}
+
+/* Add more CSS styles as needed */
