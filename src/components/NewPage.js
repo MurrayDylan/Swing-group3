@@ -2,6 +2,11 @@ import React from 'react';
 import './NewPage.css'; // Import the corresponding CSS file for styling
 
 const NewPage = () => {
+
+  const handleButtonClick = () => {
+    window.location.href = "https://www.google.co.uk/#mmc=1";
+  };
+
   return (
     <div className="new-page-container">
       {/* Fixed header section */}
@@ -20,6 +25,10 @@ const NewPage = () => {
             <li>Optimize your content for better conversion rates</li>
             <li>Retarget users who have shown interest in your products and services</li>
           </ul>
+          <div style={{ marginTop: '40px' }}>
+            <p style={{ fontFamily: 'FrankRuehl' }}>For detailed instructions, check out this <a href="https://www.facebook.com/business/help/742478679120153?id=1205376682832142">installation guide</a>.</p>
+            <p style={{ fontFamily: 'FrankRuehl' }}>More guidance: Explore this <a href="https://www.youtube.com/watch?v=WazafPAYdOo">tutorial video</a>.</p>
+          </div>
         </section>
       </main>
     </div>
