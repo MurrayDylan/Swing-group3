@@ -1,0 +1,4 @@
+com/groupwork/dashboard/DashboardApplication.class
+com/groupwork/dashboard/Campaign.class
+com/groupwork/dashboard/CampaignController.class
+com/groupwork/dashboard/CampaignRepository.class
