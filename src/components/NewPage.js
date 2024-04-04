@@ -3,9 +3,7 @@ import './NewPage.css'; // Import the corresponding CSS file for styling
 
 const NewPage = () => {
 
-  const handleButtonClick = () => {
-    window.location.href = "https://www.google.co.uk/#mmc=1";
-  };
+
 
   return (
     <div className="new-page-container">
