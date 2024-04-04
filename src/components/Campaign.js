@@ -20,7 +20,7 @@ const SideBar = ({ onSelect, onRefresh }) => {
 
   // Function to navigate to the contact us page
   const navigateToContactUs = () => {
-    window.location.href = "https://www.thetradedesk.com/us/contact-us";
+    navigate('/new-page');
   };
 
   return (
