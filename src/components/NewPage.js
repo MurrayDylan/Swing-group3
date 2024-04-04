@@ -3,6 +3,9 @@ import './NewPage.css'; // Import the corresponding CSS file for styling
 
 const NewPage = () => {
 
+  const handleButtonClick = () => {
+    window.location.href = "https://www.thetradedesk.com/us/contact-us";
+  };
 
 
   return (
@@ -24,10 +27,21 @@ const NewPage = () => {
             <li>Retarget users who have shown interest in your products and services</li>
           </ul>
           <div style={{ marginTop: '40px' }}>
-            <p style={{ fontFamily: 'FrankRuehl' }}>For detailed instructions, check out this <a href="https://www.facebook.com/business/help/742478679120153?id=1205376682832142">installation guide</a>.</p>
+            <p style={{ fontFamily: 'FrankRuehl' }}>For detailed instructions, check out our <a href="https://partner.thetradedesk.com/v3/portal/data/doc/TrackingTagsUniversalPixel">installation guide</a>.</p>
             <p style={{ fontFamily: 'FrankRuehl' }}>More guidance: Explore this <a href="https://www.youtube.com/watch?v=WazafPAYdOo">tutorial video</a>.</p>
           </div>
         </section>
+
+        {/* Support message and contact button */}
+        <section className="support-section">
+          <div className="support-message">
+            <div style={{ marginTop: '55px' }}>
+              <p style={{ fontFamily: 'Arial, sans-serif', marginBottom: '3px' }}>Contact our Customer Service for further assistance.</p>
+              <button className="contact-button" onClick={handleButtonClick}>Get Support</button>
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   );

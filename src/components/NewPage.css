@@ -11,7 +11,8 @@
     }
 }
 
-/* Apply animation to the new-page-section class */
+/* Applied animation to the new-page-section class */
 .new-page-section {
     animation: slideInFromLeft 1s ease-out;
+    padding-left: 20px;
 }
