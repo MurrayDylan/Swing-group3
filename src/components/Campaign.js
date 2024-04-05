@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CampaignContext } from './CampaignContext';
 import './Campaign.css';
 
 // Component for each item in the sidebar
@@ -19,6 +18,11 @@ const SideBar = ({ onSelect, onRefresh }) => {
     navigate('/campaign-creation');
   };
 
+  // Function to navigate to the contact us page
+  const navigateToContactUs = () => {
+    navigate('/new-page');
+  };
+
   return (
     <nav className="sidebar">
       <ul>
@@ -26,7 +30,8 @@ const SideBar = ({ onSelect, onRefresh }) => {
         <SideBarItem title="Insights" onClick={() => onSelect('Insights')} />
         <SideBarItem title="Campaign Management" onClick={() => onSelect('Campaign Management')} />
         <SideBarItem title="Tracking & Audiences" onClick={() => onSelect('Tracking & Audiences')} />
-        <SideBarItem title="Academy & Support" onClick={() => onSelect('Academy & Support')} />
+        {/* Modified to navigate to the contact us page */}
+        <SideBarItem title="Academy & Support" onClick={() => navigateToContactUs()} />
         <SideBarItem title="Create Campaign" onClick={goToCampaignCreation} />
         {/* Refresh Data item which triggers resetData function */}
         <SideBarItem title="Refresh Data" onClick={onRefresh} />
@@ -38,9 +43,9 @@ const SideBar = ({ onSelect, onRefresh }) => {
 // Component to display campaign data in a table
 const CampaignTable = ({ campaigns }) => (
   <table>
+    {/* Table headers */}
     <thead>
       <tr>
-        {/* Table headers */}
         <th>Status</th>
         <th>Campaign</th>
         <th>Budget</th>
@@ -80,13 +85,10 @@ function Campaign() {
   const [filter3, setFilter3] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
 
-  // Using useContext to access CampaignContext
-  const { campaigns, resetCampaigns } = useContext(CampaignContext);
-
   // Function to handle sidebar item selection
   const handleSelectSidebarItem = (itemName) => {
     console.log(`${itemName} selected`);
-    // Potential updates based on item selection
+    // Potential updates based on item selections
   };
 
   // Function to reset filters and campaign data
@@ -97,10 +99,11 @@ function Campaign() {
     setFilter3('');
     setSelectedDate('');
     // Resets campaign data by calling resetCampaigns from context
-    resetCampaigns();
+    // resetCampaigns();
   };
 
   // Logic to filter campaigns based on filters and search term
+  const campaigns = []; // Placeholder for campaigns
   const filteredCampaigns = campaigns.filter(campaign => {
     // Placeholder for actual filtering logic
     return true;
@@ -139,10 +142,10 @@ function Campaign() {
         <div className="campaign-controls">
           {/* Campaign table header and date picker */}
           <h2>Campaign Table</h2>
-          <input 
-            type="date" 
-            value={selectedDate} 
-            onChange={(e) => setSelectedDate(e.target.value)} 
+          <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
           />
         </div>
         {/* Table displaying filtered campaigns */}

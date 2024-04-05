@@ -1,0 +1,18 @@
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Applied animation to the new-page-section class */
+.new-page-section {
+    animation: slideInFromLeft 1s ease-out;
+    padding-left: 20px;
+}
