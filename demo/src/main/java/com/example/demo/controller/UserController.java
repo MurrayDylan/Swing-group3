@@ -58,6 +58,7 @@ public class UserController {
         return "user successfully created with name: " + name;
     }
 
+    //List all of the campaigns associated with the given user with the id variable
     @GetMapping("/user/campaigns/{id}")
     public ResponseEntity<Set<Campaign>> getCampaignsByUser(@PathVariable Long id) {
         User user = userRepository.findById(id)
@@ -69,11 +70,14 @@ public class UserController {
         return new ResponseEntity<>(campaigns, HttpStatus.OK);
     }
 
+    //Lists all users current stored in the userRepository.
     @GetMapping("/users/list")
     public Iterable<User> getUsers() {
         return userRepository.findAll();
     }
 
+
+    //Gives the campaign with it's metrics, not fully functional yet as getting campaigns will just return the metrics
     @GetMapping("/{campaignId}")
     public Metrics getCampaignWithMetrics(@PathVariable String campaignId) {
         Campaign campaign = campaignRepository.findByCampaignId(campaignId);
