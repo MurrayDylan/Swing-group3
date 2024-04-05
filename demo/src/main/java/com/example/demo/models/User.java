@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Set;
 
-
+//Linked with its campaigns and identified by the id variable to be found in the database.
 @Entity
 @Table(name="users")
 public class User {

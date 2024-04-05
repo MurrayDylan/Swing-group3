@@ -3,6 +3,11 @@ import com.example.demo.models.Campaign.Metrics.GoalInfo.Metrics;
 import com.example.demo.models.User;
 import jakarta.persistence.*;
 
+
+//Campaign class linked to user class. The user class can have multiple intances of the campaign class.
+//The campaign class also has an instance of campaignMetrics which stores all of the data necessary
+// to be linked with the trade desk.
+//The campaign class has get and post request methods set up in the userController.
 @Entity
 @Table(name = "campaigns")
 public class Campaign{
