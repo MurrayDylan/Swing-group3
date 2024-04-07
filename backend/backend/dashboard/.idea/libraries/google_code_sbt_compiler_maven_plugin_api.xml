@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="google.code.sbt.compiler.maven.plugin.api" type="repository">
+    <properties maven-id="com.google.code.sbt-compiler-maven-plugin:sbt-compiler-api:1.0.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/sbt-compiler-maven-plugin/sbt-compiler-api/1.0.0/sbt-compiler-api-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
