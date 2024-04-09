@@ -9,7 +9,16 @@
       opacity: 1;
     }
   }
+
+  .sidebar {
+    padding: 0px;
+  }
   
+
+  .main{
+    padding: 20px;
+  }
+
   .white-text {
     color: black;
     animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */

@@ -20,9 +20,14 @@ export const CampaignProvider = ({ children }) => {
     setCampaigns([]);
   };
 
+  const deleteCampaign = (index) => {
+    const updatedCampaigns = campaigns.filter((_, i) => i !== index);
+    setCampaigns(updatedCampaigns);
+  }
+
   // Providing the campaigns state, addCampaign and resetCampaigns functions to the context
   return (
-    <CampaignContext.Provider value={{ campaigns, addCampaign, resetCampaigns }}>
+    <CampaignContext.Provider value={{ campaigns, addCampaign, resetCampaigns, deleteCampaign }}>
       {children}
     </CampaignContext.Provider>
   );
