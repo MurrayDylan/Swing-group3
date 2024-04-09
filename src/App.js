@@ -38,7 +38,7 @@ function App() {
             <Route path="/Campaign" element={isAuthenticated ? <Campaign /> : <Navigate to="/login" replace />} />
             <Route path="/campaign-creation" element={isAuthenticated ? <CampaignCreation /> : <Navigate to="/login" replace />} />
             <Route path="/edit-profile" element={isAuthenticated ? <EditProfile /> : <Navigate to="/login" replace />} />
-            <Route path="/delete-campaign" exact component={DeleteCampaign} /> 
+            <Route path="/manage" element={isAuthenticated ? <DeleteCampaign /> : <Navigate to="/login" replace />} /> 
             <Route path="/new-page" element={isAuthenticated ? <NewPage /> : <Navigate to="/login" replace />} />
             {/* Add more routes as needed */}
           </Routes>

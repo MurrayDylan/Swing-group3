@@ -23,20 +23,19 @@ const SideBar = ({ onSelect, onRefresh }) => {
 
   // Function to navigate to the delete campaign page
   const goToDeleteCampaign = () => {
-    navigate('/delete-campaign');
+    navigate('/manage');
   };
 
   return (
     <nav className="sidebar">
       <ul>
         {/* List of items in the sidebar */}
-        <SideBarItem title="Insights" onClick={() => onSelect('Insights')} />
-        <SideBarItem title="Campaign Management" onClick={() => onSelect('Campaign Management')} />
+        <SideBarItem title="Insights" onClick={() => navigate('/Campaign')} /> 
         <SideBarItem title="Tracking & Audiences" onClick={() => onSelect('Tracking & Audiences')} />
         <SideBarItem title="Academy & Support" onClick={() => navigateToContactUs()} />
         <SideBarItem title="Create Campaign" onClick={goToCampaignCreation} />
         {/* New sidebar item for delete campaign page */}
-        <SideBarItem title="Delete Campaign" onClick={goToDeleteCampaign} />
+        <SideBarItem title="Campaign Management" onClick={goToDeleteCampaign} />
         {/* Refresh Data item which triggers resetData function */}
         <SideBarItem title="Refresh Data" onClick={onRefresh} />
       </ul>

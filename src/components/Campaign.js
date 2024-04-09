@@ -30,7 +30,7 @@ const SideBar = ({ onSelect, onRefresh }) => {
 
   // Function to navigate to the delete campaign page
   const goToDeleteCampaign = () => {
-    navigate('/delete-campaign');
+    navigate('/manage');
   };
 
 
@@ -38,13 +38,12 @@ const SideBar = ({ onSelect, onRefresh }) => {
     <nav className="sidebar">
       <ul>
         {/* List of items in the sidebar */}
-        <SideBarItem title="Insights" onClick={() => onSelect('Insights')} />
-        <SideBarItem title="Campaign Management" onClick={() => onSelect('Campaign Management')} />
+        <SideBarItem title="Insights" onClick={() => navigate('/Campaign')} /> 
         <SideBarItem title="Tracking & Audiences" onClick={() => onSelect('Tracking & Audiences')} />
         <SideBarItem title="Academy & Support" onClick={() => navigateToContactUs()} />
         <SideBarItem title="Create Campaign" onClick={goToCampaignCreation} />
         {/* New sidebar item for delete campaign page */}
-        <SideBarItem title="Delete Campaign" onClick={goToDeleteCampaign} />
+        <SideBarItem title="Campaign Management" onClick={goToDeleteCampaign} />
         {/* Refresh Data item which triggers resetData function */}
         <SideBarItem title="Refresh Data" onClick={onRefresh} />
       </ul>
@@ -128,7 +127,10 @@ function Campaign() {
         <SideBar onSelect={handleSelectSidebarItem} onRefresh={resetData} />
       </aside>
       <main className="main-content">
-        <div className="search-and-filters">
+        <div className="campaign-controls">
+          {/* Campaign table header and date picker */}
+          <h1 className="header-title">Campaign Table</h1>
+          <div className="search-and-filters">
           {/* Search and filter inputs */}
           <input
             type="text"
@@ -151,13 +153,10 @@ function Campaign() {
             {/* Placeholder for additional filter options */}
           </select>
         </div>
-        <div className="campaign-controls">
-          {/* Campaign table header and date picker */}
-          <h2>Campaign Table</h2>
-          <input
-            type="date"
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
+          <input 
+            type="date" 
+            value={selectedDate} 
+            onChange={(e) => setSelectedDate(e.target.value)} 
           />
         </div>
         {/* Table displaying filtered campaigns */}
