@@ -102,6 +102,8 @@ function Campaign() {
     // Potential updates based on item selections
   };
 
+  const { campaigns, resetCampaigns } = useContext(CampaignContext);
+
   // Function to reset filters and campaign data
   const resetData = () => {
     setSearchTerm('');
@@ -114,7 +116,7 @@ function Campaign() {
   };
 
   // Logic to filter campaigns based on filters and search term
-  const campaigns = []; // Placeholder for campaigns
+  
   const filteredCampaigns = campaigns.filter(campaign => {
     // Placeholder for actual filtering logic
     return true;
@@ -153,14 +155,11 @@ function Campaign() {
             {/* Placeholder for additional filter options */}
           </select>
         </div>
-          <input 
-            type="date" 
-            value={selectedDate} 
-            onChange={(e) => setSelectedDate(e.target.value)} 
-          />
-        </div>
+          
+        
         {/* Table displaying filtered campaigns */}
         <CampaignTable campaigns={filteredCampaigns} />
+      </div>
       </main>
     </div>
   );
