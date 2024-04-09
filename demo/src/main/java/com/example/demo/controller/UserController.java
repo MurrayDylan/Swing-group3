@@ -78,7 +78,7 @@ public class UserController {
 
 
     //Gives the campaign with it's metrics, not fully functional yet as getting campaigns will just return the metrics
-    @GetMapping("/{campaignId}")
+    @GetMapping("/{campaignId}/metrics")
     public Metrics getCampaignWithMetrics(@PathVariable String campaignId) {
         Campaign campaign = campaignRepository.findByCampaignId(campaignId);
         if (campaign != null) {
@@ -88,5 +88,26 @@ public class UserController {
             return null; // Campaign not found
         }
     }
+    @GetMapping("/{campaignId}")
+    public Campaign getCampaign(@PathVariable String campaignId) {
+        Campaign campaign = campaignRepository.findByCampaignId(campaignId);
+        if (campaign != null) {
+            return campaign;
+        } else {
+            return null; // Campaign not found
+        }
+    }
+    @GetMapping("/{campaignId}/getCampaignFlightId")
+    public int getCampaignFlightId(@PathVariable String campaignId) {
+        Campaign campaign = campaignRepository.findByCampaignId(campaignId);
+        return campaign.getMetrics().getCampaignFlightId();
+    }
+    @PostMapping("/{campaignId}/setCampaignFlightId/{number}")
+    public void setCampaignFlightId(@PathVariable String campaignId, @PathVariable int number) {
+        Campaign campaign = campaignRepository.findByCampaignId(campaignId);
+        campaign.getMetrics().setCampaignFlightId(number);
+        campaignRepository.save(campaign);
+    }
+
 }
 
