@@ -1,0 +1,112 @@
+/* Applied animation to the new-page-section class */
+.new-page-section {
+    animation: slideInFromLeft 1s ease-out;
+    padding-left: 20px;
+}
+
+/* Flex container for the layout */
+.layout-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px;
+    min-height: 100vh;
+}
+  
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.sidebar-item, .sidebar ul li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #444; 
+    transition: background-color 0.3s ease-in-out;
+    font-size: var(--sidebar-font-size); 
+}
+.sidebar-item:hover, .sidebar-item:focus, .sidebar ul li:hover, .sidebar ul li:focus {
+    background-color: #555;
+    color: white;
+}
+
+.new-page-content {
+    flex-grow: 1;
+    background-color: var(--background-color);
+    overflow-y: auto; /* Enables scroll if content is taller than screen */
+    padding: 20px;
+}
+
+/* Table styles */
+table, .campaign-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+th, td, .campaign-table th, .campaign-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+  
+th {
+    background-color: #eee;
+}
+
+/* Enhanced search bar and filters styling */
+.search-and-filters {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+}
+  
+.search-and-filters input[type="text"], .search-and-filters select {
+    padding: 8px;
+    margin-right: 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-background);
+    border-radius: var(--input-border-radius);
+    flex-grow: 1; /* Search bar takes more space */
+}
+  
+.search-and-filters select {
+    flex-grow: 0; /* Dropdowns do not expand */
+}
+  
+.search-and-filters select:last-child {
+    margin-right: 0;
+}
+  
+button, .button {
+    background-color: var(--highlight-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--input-border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+  
+button:hover, .button:hover {
+    background-color: darken(var(--highlight-color), 10%);
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
