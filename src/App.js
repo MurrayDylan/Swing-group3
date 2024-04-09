@@ -10,6 +10,9 @@ import CreationPage from './components/AudienceCreation';
 import NewPage from './components/NewPage';
 import Campaign from './components/Campaign';
 import Navbar from './components/NavBar';
+import NewPage from './components/NewPage';
+import DeleteCampaign from './components/DeleteCampaign';
+
 import CampaignCreation from './components/CampaignCreation';
 import { ProfileProvider } from './components/ProfileContext';
 import { CampaignProvider } from './components/CampaignContext';
@@ -23,23 +26,24 @@ function App() {
   return (
     <Router>
       <CampaignProvider>
-        <ProfileProvider>
-          <div className='App'>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" replace />} />
-              <Route path="/login" element={!isAuthenticated ? <LoginButton /> : <Navigate to="/" replace />} />
-              <Route path="/Profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" replace />} />
-              <Route path="/logout" element={isAuthenticated ? <LogoutButton /> : <Navigate to="/login" replace />} />
-              <Route path="/AudienceCreation" element={isAuthenticated ? <CreationPage /> : <Navigate to="/login" replace />} />
-              <Route path="/new-page" element={isAuthenticated ? <NewPage /> : <Navigate to="/login" replace />} />
-              <Route path="/Campaign" element={isAuthenticated ? <Campaign /> : <Navigate to="/login" replace />} />
-              <Route path="/campaign-creation" element={isAuthenticated ? <CampaignCreation /> : <Navigate to="/login" replace />} />
-              <Route path="/edit-profile" element={isAuthenticated ? <EditProfile /> : <Navigate to="/login" replace />} />
-              {/* Add more routes as needed */}
-            </Routes>
-          </div>
-        </ProfileProvider>
+      <ProfileProvider> 
+        <div className='App'>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" replace />} />
+            <Route path="/login" element={!isAuthenticated ? <LoginButton /> : <Navigate to="/" replace />} />
+            <Route path="/Profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" replace />} />
+            <Route path="/logout" element={isAuthenticated ? <LogoutButton /> : <Navigate to="/login" replace />} />
+            <Route path="/AudienceCreation" element={isAuthenticated ? <CreationPage /> : <Navigate to="/login" replace />} />
+            <Route path="/Campaign" element={isAuthenticated ? <Campaign /> : <Navigate to="/login" replace />} />
+            <Route path="/campaign-creation" element={isAuthenticated ? <CampaignCreation /> : <Navigate to="/login" replace />} />
+            <Route path="/edit-profile" element={isAuthenticated ? <EditProfile /> : <Navigate to="/login" replace />} />
+            <Route path="/delete-campaign" exact component={DeleteCampaign} /> 
+            <Route path="/new-page" element={isAuthenticated ? <NewPage /> : <Navigate to="/login" replace />} />
+            {/* Add more routes as needed */}
+          </Routes>
+        </div>
+      </ProfileProvider>
       </CampaignProvider>
     </Router>
   );

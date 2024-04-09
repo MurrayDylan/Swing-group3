@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
+import { CampaignContext } from './CampaignContext';
 import './Campaign.css';
 
 // Component for each item in the sidebar
@@ -18,10 +20,19 @@ const SideBar = ({ onSelect, onRefresh }) => {
     navigate('/campaign-creation');
   };
 
+
   // Function to navigate to the contact us page
+
   const navigateToContactUs = () => {
     navigate('/new-page');
   };
+
+
+  // Function to navigate to the delete campaign page
+  const goToDeleteCampaign = () => {
+    navigate('/delete-campaign');
+  };
+
 
   return (
     <nav className="sidebar">
@@ -30,9 +41,10 @@ const SideBar = ({ onSelect, onRefresh }) => {
         <SideBarItem title="Insights" onClick={() => onSelect('Insights')} />
         <SideBarItem title="Campaign Management" onClick={() => onSelect('Campaign Management')} />
         <SideBarItem title="Tracking & Audiences" onClick={() => onSelect('Tracking & Audiences')} />
-        {/* Modified to navigate to the contact us page */}
         <SideBarItem title="Academy & Support" onClick={() => navigateToContactUs()} />
         <SideBarItem title="Create Campaign" onClick={goToCampaignCreation} />
+        {/* New sidebar item for delete campaign page */}
+        <SideBarItem title="Delete Campaign" onClick={goToDeleteCampaign} />
         {/* Refresh Data item which triggers resetData function */}
         <SideBarItem title="Refresh Data" onClick={onRefresh} />
       </ul>
@@ -61,14 +73,14 @@ const CampaignTable = ({ campaigns }) => (
       {/* Mapping each campaign to a row in the table */}
       {campaigns.map((campaign, index) => (
         <tr key={index}>
-          <td>{campaign.status}</td>
+          <td>Connected</td>
           <td>{campaign.name}</td>
-          <td>${campaign.budget}</td>
-          <td>${campaign.spend}</td>
+          <td>€{campaign.budget}</td>
+          <td>€{campaign.spend}</td>
           <td>{campaign.primaryKPI}</td>
-          <td>${campaign.baseBid}</td>
-          <td>${campaign.maxBid}</td>
-          <td>${campaign.cpm}</td>
+          <td>€{campaign.baseBid}</td>
+          <td>€{campaign.maxBid}</td>
+          <td>€{campaign.cpm}</td>
           <td>{campaign.frequency}</td>
         </tr>
       ))}

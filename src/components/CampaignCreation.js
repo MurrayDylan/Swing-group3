@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CampaignContext } from './CampaignContext';
 import { useNavigate } from 'react-router-dom';
-import NumberInput from './NumberInput'; // import the number input componenet
 import './CreationPage.css';
 
 const CampaignCreation = () => {
@@ -58,44 +57,44 @@ const CampaignCreation = () => {
 
                     {/* Budget Input */}
                     <p>Budget</p>
-                    <NumberInput
+                    <input
                         value={newCampaign.budget}
-                        onSave={handleNumericChange('budget')}
+                        onChange={e => setNewCampaign({ ...newCampaign, budget: e.target.value })}
                     />
 
                     {/* Spend Input */}
                     <p>3. Spend</p>
-                    <NumberInput
+                    <input
                         value={newCampaign.spend}
-                        onSave={handleNumericChange('spend')}
+                        onChange={e => setNewCampaign({ ...newCampaign, spend: e.target.value })}
                     />
 
                     {/* Primary KPI Input */}
                     <p>4. Primary KPI (%)</p>
-                    <NumberInput
+                    <input
                         value={newCampaign.primaryKPI}
-                        onSave={handleNumericChange('primaryKPI')}
+                        onChange={e => setNewCampaign({ ...newCampaign, primaryKPI: e.target.value })}
                     />
 
                     {/* Base Bid Input */}
                     <p>5. Base Bid ($)</p>
-                    <NumberInput
+                    <input
                         value={newCampaign.baseBid}
-                        onSave={handleNumericChange('baseBid')}
+                        onChange={e => setNewCampaign({ ...newCampaign, baseBid: e.target.value })}
                     />
 
                     {/* Max Bid Input */}
                     <p>6. Max Bid ($)</p>
-                    <NumberInput
+                    <input
                         value={newCampaign.maxBid}
-                        onSave={handleNumericChange('maxBid')}
+                        onChange={e => setNewCampaign({ ...newCampaign, maxBid: e.target.value })}
                     />
 
                     {/* CPM Input */}
                     <p>7. CPM ($)</p>
-                    <NumberInput
+                    <input
                         value={newCampaign.cpm}
-                        onSave={handleNumericChange('cpm')}
+                        onChange={e => setNewCampaign({ ...newCampaign, cpm: e.target.value })} 
                     />
 
                     {/* Frequency Input */}
