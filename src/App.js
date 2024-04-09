@@ -7,13 +7,14 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
 import CreationPage from './components/AudienceCreation';
+import NewPage from './components/NewPage';
 import Campaign from './components/Campaign';
 import Navbar from './components/NavBar';
 import NewPage from './components/NewPage';
 import DeleteCampaign from './components/DeleteCampaign';
 
 import CampaignCreation from './components/CampaignCreation';
-import { ProfileProvider } from './components/ProfileContext'; 
+import { ProfileProvider } from './components/ProfileContext';
 import { CampaignProvider } from './components/CampaignContext';
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();

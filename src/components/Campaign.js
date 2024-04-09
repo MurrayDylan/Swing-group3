@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 import { CampaignContext } from './CampaignContext';
@@ -19,14 +20,19 @@ const SideBar = ({ onSelect, onRefresh }) => {
     navigate('/campaign-creation');
   };
 
+
+  // Function to navigate to the contact us page
+
   const navigateToContactUs = () => {
     navigate('/new-page');
   };
+
 
   // Function to navigate to the delete campaign page
   const goToDeleteCampaign = () => {
     navigate('/delete-campaign');
   };
+
 
   return (
     <nav className="sidebar">
@@ -49,9 +55,9 @@ const SideBar = ({ onSelect, onRefresh }) => {
 // Component to display campaign data in a table
 const CampaignTable = ({ campaigns }) => (
   <table>
+    {/* Table headers */}
     <thead>
       <tr>
-        {/* Table headers */}
         <th>Status</th>
         <th>Campaign</th>
         <th>Budget</th>
@@ -91,13 +97,10 @@ function Campaign() {
   const [filter3, setFilter3] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
 
-  // Using useContext to access CampaignContext
-  const { campaigns, resetCampaigns } = useContext(CampaignContext);
-
   // Function to handle sidebar item selection
   const handleSelectSidebarItem = (itemName) => {
     console.log(`${itemName} selected`);
-    // Potential updates based on item selection
+    // Potential updates based on item selections
   };
 
   // Function to reset filters and campaign data
@@ -108,10 +111,11 @@ function Campaign() {
     setFilter3('');
     setSelectedDate('');
     // Resets campaign data by calling resetCampaigns from context
-    resetCampaigns();
+    // resetCampaigns();
   };
 
   // Logic to filter campaigns based on filters and search term
+  const campaigns = []; // Placeholder for campaigns
   const filteredCampaigns = campaigns.filter(campaign => {
     // Placeholder for actual filtering logic
     return true;
@@ -150,10 +154,10 @@ function Campaign() {
         <div className="campaign-controls">
           {/* Campaign table header and date picker */}
           <h2>Campaign Table</h2>
-          <input 
-            type="date" 
-            value={selectedDate} 
-            onChange={(e) => setSelectedDate(e.target.value)} 
+          <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
           />
         </div>
         {/* Table displaying filtered campaigns */}

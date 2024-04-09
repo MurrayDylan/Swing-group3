@@ -1,3 +1,4 @@
+
 import { useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 import { CampaignContext } from './CampaignContext';
 import './NewPage.css';
@@ -50,6 +51,7 @@ const NewPage = () => {
     // Potential updates based on item selection
   };
 
+
   const handleButtonClick = () => {
     window.location.href = "https://www.thetradedesk.com/us/contact-us";
   };
@@ -70,6 +72,7 @@ const NewPage = () => {
         {/* Scrollable content section */}
         <section className="new-page-section">
           {/* Introduction to New Page */}
+
           <h2 className="section-title">Improve your Campaign using Pixels</h2>
           <ul className="section-bullet-points">
             <li>Measure the reach and effectiveness of your digital ads</li>

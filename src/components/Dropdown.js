@@ -196,8 +196,8 @@ const countries = [
     "Yemen",
     "Zambia",
     "Zimbabwe"
-  ];
-  
+];
+
 function CountryDropdown({ onSave }) {
     // State used to store the selected country
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -218,7 +218,7 @@ function CountryDropdown({ onSave }) {
                 value={selectedCountry}
                 onChange={handleChange}
                 className="form-select"
-                style={{ width: '300px', height: '30px' ,  marginBottom: '5px'  }}
+                style={{ width: '300px', height: '45px', marginBottom: '5px' }}
 
             >
                 <option value="">Select a country</option>
