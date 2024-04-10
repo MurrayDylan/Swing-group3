@@ -19,6 +19,9 @@ jobs:
       - name: swap folder
         run: cd backend
 
+      - name : list contents
+        run : ls
+
       - name: swap to demo
         run: cd demo
 
