@@ -16,22 +16,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name : list contents
-        run : ls
+      - name: List contents of the root directory
+        run: ls
 
-      - name: swap folder
-        run: cd backend
+      - name: Change to backend/demo directory
+        run: cd backend/demo
 
-      - name : list contents
-        run : ls
-
-      - name: swap folder 2
-        run: cd backend
-
-      - name: swap to demo
-        run: cd demo
-
-      - name: List contents of the folder
+      - name: List contents of the backend/demo directory
         run: ls
 
       - name: Set up JDK
