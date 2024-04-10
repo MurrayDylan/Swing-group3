@@ -16,15 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: List contents of the root directory
-        run: ls
-
-      - name: Change to backend/demo directory
-        run: cd backend/demo
-
-      - name: List contents of the backend/demo directory
-        run: ls
-
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -33,3 +24,4 @@ jobs:
 
       - name: Build with Maven
         run: mvn spring-boot:run
+        working-directory: backend/demo
