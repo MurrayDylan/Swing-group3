@@ -27,7 +27,7 @@ jobs:
         working-directory: backend/demo
 
       - name: wait for application to start
-        run: sleep 60
+        run: sleep 30
 
       - name: shutdown 
-        run: curl -X POST localhost:port/shutdown
+        run: curl -X POST localhost:8080/shutdown
