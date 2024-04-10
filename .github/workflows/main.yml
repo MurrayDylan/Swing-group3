@@ -25,3 +25,6 @@ jobs:
       - name: Build with Maven
         run: mvn spring-boot:run
         working-directory: backend/demo
+
+      - name: shutdown 
+        run: curl -X POST localhost:port/shutdown
