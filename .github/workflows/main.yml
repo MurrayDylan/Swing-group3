@@ -16,11 +16,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name : list contents
+        run : ls
+
       - name: swap folder
         run: cd backend
 
       - name : list contents
         run : ls
+
+      - name: swap folder 2
+        run: cd backend
 
       - name: swap to demo
         run: cd demo
