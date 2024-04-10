@@ -19,6 +19,9 @@ jobs:
       - name: swap folder
         run: cd backend/demo
 
+      - name: List contents of the folder
+        run: ls
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
