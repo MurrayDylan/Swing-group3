@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - sweng-back
+  pull_request:
+    branches:
+      - sweng-back
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: swap folder
+        run: cd backend
+
+      - name: swap to demo
+        run: cd demo
+
+      - name: List contents of the folder
+        run: ls
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17' # Adjust as needed
+          distribution: 'adopt'
+
+      - name: Build with Maven
+        run: mvn spring-boot:run
