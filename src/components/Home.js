@@ -1,20 +1,22 @@
-// src/components/Home.js
-
 import React from 'react';
-import { Link } from 'react-router-dom'; // You'll use Link to navigate
+import './Home.css'; // Import the CSS file
+import Background from '../assets/background4.jpeg'; // Make sure this path is correct and the file extension is correct
 
-const Home = () => {
+function Home() {
   return (
-    <div>
-      <h1>This is Home Page</h1>
-      <nav>
-        <ul>
-          <li><Link to="/profile">Profile</Link></li>
-          <li><Link to="/logout">Logout</Link></li>
-        </ul>
-      </nav>
+    <div className="home" style={{ backgroundImage: `url(${Background})` }}>
+      <div className="white-text">
+        <div className="welcome-container">
+          <h1>Welcome to Finch Mini Trade Desk</h1>
+        </div>
+        <div className="description-container">
+          <p className="description">
+            Here is a brief description about Finch Mini Trade Desk. Learn more about our features, services, and how we can help you manage your trades more efficiently.
+          </p>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Home;

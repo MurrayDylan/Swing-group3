@@ -1,27 +1,22 @@
-import { useAuth0 } from "@auth0/auth0-react";
+// src/components/LoginButton.js
 import React from "react";
-import loginImage from '../assets/finch-logo.png'; // Import your image here
+import { useAuth0 } from "@auth0/auth0-react";
+import loginImage from '../assets/finch-logo.png';
+import './login.css'; // Import the CSS file
 
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '50vh' }}>
-      <div style={{ marginBottom: '20px' }}> {/* Adjust marginBottom as needed */}
-        <img src={loginImage} alt="Login" style={{ width: '500px', height: 'auto' }} />
+    <div className="login-button-container">
+      <div>
+        <img src={loginImage} alt="Login" className="login-image" />
       </div>
       <div>
-        <div style={{ textAlign: 'center', padding: '50px' }}></div>
+        <div className="login-text"></div>
         <button
           onClick={() => loginWithRedirect()}
-          style={{
-            padding: '15px 40px',
-            fontSize: '20px',
-            cursor: 'pointer',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-          }}
+          className="login-button"
         >
           Log In
         </button>

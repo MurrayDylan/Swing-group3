@@ -1,0 +1,102 @@
+/*new homecss*/
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-image: url('../assets/background4.jpeg'); /* Adjust the path to your image file */
+  background-size: cover; /* Cover the entire size of the container */
+  background-position: center center; /* Center the image */
+  background-attachment: fixed; /* Fix the background to the viewport */
+  position: relative; /* This will be the reference for the absolute elements inside */
+}
+
+.white-text, .welcome-container, .description-container {
+  z-index: 2; /* Any value higher than 1 which is the z-index of the background */
+  position: relative; /* This ensures the z-index is applied correctly */
+  width: 100%;
+}
+
+
+/*@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+*/
+.welcome-container h1 {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 3rem;
+  animation: fadeIn 2s ease-out;
+}
+.description-container {
+  margin-top: 20px;
+  max-width: 95.9%;
+  animation: fadeIn 2s ease-out;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+
+
+.description {
+  color: black;
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.welcome-container h1 {
+  animation: fadeIn 4.5s ease-out;
+}
+
+.description-container {
+  animation: fadeIn 3.5s ease-out;
+}
+
+/* Optional: Delay the start of the animation if needed */
+.welcome-container h1 {
+  animation-delay: 0s;
+}
+
+.description-container {
+  animation-delay: 0s;
+}
+
+/*.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  overflow: hidden;
+}*/

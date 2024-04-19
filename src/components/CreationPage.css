@@ -1,0 +1,128 @@
+/* CreationPage.css */
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Sidebar styling */
+.sidebar-container {
+  width: 250px; /* Set width for sidebar */
+  background-color: var(--primary-color); /* Set background color */
+  color: var(--background-color); /* Set text color */
+  padding: 20px; /* Add padding */
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-item,
+.sidebar ul li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s ease-in-out;
+  font-size: var(--sidebar-font-size);
+}
+
+.sidebar-item:hover,
+.sidebar-item:focus,
+.sidebar ul li:hover,
+.sidebar ul li:focus {
+  background-color: #555;
+  color: white;
+}
+
+/* Main content styling */
+.content-container {
+  flex-grow: 1; /* Allow content to grow to fill available space */
+}
+
+.white-text {
+  color: black;
+  animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
+  padding: 20px; /* Add some padding around the content */
+  background-color: transparent; /* Dark background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  margin: 20px auto; /* Center the content */
+  width: 80%; /* Set a max width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+input[type='text'],
+select {
+  width: 100%; /* Full width */
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure padding doesn't affect width */
+  transition: border-color 0.3s ease-in-out; /* Smooth transition for border */
+}
+
+input[type='text']:focus,
+select:focus {
+  border-color: #4caf50; /* Highlight focus */
+}
+
+button,
+.button-like {
+  /* Target buttons and divs acting like buttons */
+  background-color: rgb(0, 123, 255); /* Green background */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+}
+
+button:hover,
+.button-like:hover {
+  background-color: blue; /* Darker green on hover */
+}
+
+/* Improve layout with flexbox for form sections */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Space out sections */
+}
+
+.form-section label {
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Emphasize labels */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .white-text {
+    width: 95%; /* More width on smaller screens */
+  }
+
+  .layout-container {
+    flex-direction: column; /* Change layout to column on smaller screens */
+  }
+
+  .sidebar-container {
+    width: 100%; /* Full width for sidebar on smaller screens */
+    height: auto; /* Auto height */
+    position: relative;
+    padding: 10px;
+  }
+
+  .content-container {
+    padding: 10px; /* Add padding for content on smaller screens */
+  }
+}

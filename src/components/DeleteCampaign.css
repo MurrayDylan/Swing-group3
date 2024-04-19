@@ -1,0 +1,81 @@
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .sidebar {
+    padding: 0px;
+  }
+  
+
+  .main{
+    padding: 20px;
+  }
+
+  .white-text {
+    color: black;
+    animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
+    padding: 20px; /* Add some padding around the content */
+    background-color:transparent; /* Dark background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Center the content */
+    width: 80%; /* Set a max width */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow for depth */
+  }
+  
+  input[type="text"], select {
+    width: 100%; /* Full width */
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure padding doesn't affect width */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for border */
+  }
+  
+  input[type="text"]:focus, select:focus {
+    border-color: #4CAF50; /* Highlight focus */
+  }
+  
+  button, .button-like { /* Target buttons and divs acting like buttons */
+    background-color: rgb(0, 123, 255); /* Green background */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+  }
+  
+  button:hover, .button-like:hover {
+    background-color: blue; /* Darker green on hover */
+  }
+  
+  /* Improve layout with flexbox for form sections */
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Space out sections */
+  }
+  
+  .form-section label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Emphasize labels */
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .white-text {
+      width: 95%; /* More width on smaller screens */
+    }
+  }
+  
